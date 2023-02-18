@@ -22,6 +22,10 @@ export const routes = [
 
       const task = database.selectById("tasks", id);
 
+      if (!task) {
+        return res.writeHead(404, "Id doesn't exist").end()
+      }
+
       return res.end(JSON.stringify(task));
     },
   },
@@ -51,6 +55,12 @@ export const routes = [
     handler: (req, res) => {
       const { id } = req.params;
 
+      const task = database.selectById("tasks", id);
+
+      if (!task) {
+        return res.writeHead(404, "Id doesn't exist").end()
+      }
+
       if (!req.body) {
         return res.writeHead(400, "Body required").end();
       }
@@ -72,6 +82,12 @@ export const routes = [
     handler: (req, res) => {
       const { id } = req.params;
 
+      const task = database.selectById("tasks", id);
+
+      if (!task) {
+        return res.writeHead(404, "Id doesn't exist").end()
+      }
+
       database.delete("tasks", id);
 
       return res.writeHead(204).end();
@@ -82,6 +98,12 @@ export const routes = [
     path: buildRoutePath("/tasks/:id/complete"),
     handler: (req, res) => {
       const { id } = req.params;
+
+      const task = database.selectById("tasks", id);
+
+      if (!task) {
+        return res.writeHead(404, "Id doesn't exist").end()
+      }
 
       database.update("tasks", id, {
         completedAt: new Date(),
