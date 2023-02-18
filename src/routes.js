@@ -38,11 +38,10 @@ export const routes = [
     method: "PUT",
     path: buildRoutePath("/tasks/:id"),
     handler: (req, res) => {
-      console.log("PUT /tasks");
       const { id } = req.params;
 
       if (!req.body) {
-        return res.writeHead(400, 'Body required').end()
+        return res.writeHead(400, "Body required").end();
       }
 
       const { title, description } = req.body;
@@ -50,21 +49,35 @@ export const routes = [
       database.update("tasks", id, {
         title,
         description,
-        updatedAt: new Date()
+        updatedAt: new Date(),
       });
 
       return res.writeHead(204).end();
     },
   },
   {
-    method: 'DELETE',
+    method: "DELETE",
     path: buildRoutePath("/tasks/:id"),
     handler: (req, res) => {
-        const { id } = req.params
+      const { id } = req.params;
 
-        database.delete("tasks", id)
+      database.delete("tasks", id);
 
-        return res.writeHead(204).end()
-    }
-  }
+      return res.writeHead(204).end();
+    },
+  },
+  {
+    method: "PATCH",
+    path: buildRoutePath("/tasks/:id/complete"),
+    handler: (req, res) => {
+      const { id } = req.params;
+
+      database.update("tasks", id, {
+        completedAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      return res.writeHead(204).end();
+    },
+  },
 ];
