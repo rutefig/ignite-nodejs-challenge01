@@ -1,0 +1,20 @@
+{
+  "name": "ignite-nodejs-challenge01",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutefig/ignite-nodejs-challenge01.git"
+  },
+  "author": "rutefig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rutefig/ignite-nodejs-challenge01/issues"
+  },
+  "homepage": "https://github.com/rutefig/ignite-nodejs-challenge01#readme"
+}
