@@ -67,6 +67,10 @@ export const routes = [
 
       const { title, description } = req.body;
 
+      if (!title || !description) {
+        return res.writeHead(400, "Title and Description should be on Body Request")
+      }
+
       database.update("tasks", id, {
         title,
         description,
