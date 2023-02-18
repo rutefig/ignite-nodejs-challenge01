@@ -15,6 +15,17 @@ export const routes = [
     },
   },
   {
+    method: "GET",
+    path: buildRoutePath("/tasks/:id"),
+    handler: (req, res) => {
+      const { id } = req.params;
+
+      const task = database.selectById("tasks", id);
+
+      return res.end(JSON.stringify(task));
+    },
+  },
+  {
     method: "POST",
     path: buildRoutePath("/tasks"),
     handler: (req, res) => {
