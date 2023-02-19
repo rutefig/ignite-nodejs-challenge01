@@ -12,7 +12,6 @@ This project is an API for managing tasks, it does not uses any backend framewor
 To run the project you may run:
 
 ```
+npm install
 npm run dev
 ```
-
-Since this project does not have any dependency you don't need to do `npm install`
