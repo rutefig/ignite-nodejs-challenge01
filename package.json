@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rutefig/ignite-nodejs-challenge01/issues"
   },
-  "homepage": "https://github.com/rutefig/ignite-nodejs-challenge01#readme"
+  "homepage": "https://github.com/rutefig/ignite-nodejs-challenge01#readme",
+  "dependencies": {
+    "csv-parse": "^5.3.5"
+  }
 }
